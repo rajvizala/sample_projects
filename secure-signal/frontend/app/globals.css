@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #060b14;
+  color: #cbd5e1;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 4px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 2px; }
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+  100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); opacity: 0.6; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.animate-slide-in-right { animation: slide-in-right 0.3s ease-out; }
+.animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+.animate-blink { animation: blink 1.5s ease-in-out infinite; }
+
+.threat-card {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.gauge-arc {
+  transition: stroke-dashoffset 1s ease-in-out;
+}

@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0f;
+  --surface: #111118;
+  --surface-hover: #1a1a24;
+  --border: #1e1e2e;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #6366f1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #1e1e2e;
+  border-radius: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.7; }
+}
+
+.animate-blink { animation: blink 1s step-end infinite; }
+.animate-slide-in { animation: slide-in 0.2s ease-out; }
+.animate-pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
+
+.prose-dark {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.prose-dark h1, .prose-dark h2, .prose-dark h3 {
+  color: #e2e8f0;
+  font-weight: 600;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+}
+.prose-dark ul, .prose-dark ol {
+  padding-left: 1.25em;
+  margin: 0.75em 0;
+}
+.prose-dark li {
+  margin: 0.25em 0;
+}
+.prose-dark strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+.prose-dark code {
+  background: #1e1e2e;
+  color: #a5b4fc;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+.prose-dark p {
+  margin-bottom: 0.75em;
+}

@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 4px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 2px; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-slide-up { animation: slide-up 0.25s ease-out; }
+.animate-blink { animation: blink 1s step-end infinite; }
+
+.skill-node:hover { filter: brightness(1.1); cursor: pointer; }
+
+.prose-chat {
+  color: #334155;
+  line-height: 1.7;
+  font-size: 0.875rem;
+}
+.prose-chat code {
+  background: #f1f5f9;
+  color: #6366f1;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-family: 'Fira Code', monospace;
+}
+.prose-chat pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5em 0;
+  font-size: 0.8em;
+}
+.prose-chat pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+.prose-chat ul, .prose-chat ol {
+  padding-left: 1.2em;
+  margin: 0.5em 0;
+}
+.prose-chat li { margin: 0.2em 0; }
+.prose-chat strong { color: #0f172a; font-weight: 600; }
+.prose-chat p { margin-bottom: 0.5em; }
