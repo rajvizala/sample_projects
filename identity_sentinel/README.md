@@ -7,7 +7,7 @@ Identity Sentinel is an AI-native personal security monitor inspired by VC deman
 - Goes beyond generic fraud dashboards by combining rules, anomaly detection, and response guidance.
 - Demonstrates backend engineering through event ingestion, scoring pipelines, persistence, and audit-ready alert generation.
 - Shows ML judgment with a local Isolation Forest baseline that works offline and without expensive APIs.
-- Includes optional Gemini integration hooks for richer executive summaries later.
+- Is structured so a Gemini or paid-provider explainer layer can be added later without changing the scoring pipeline.
 
 ## Features
 
