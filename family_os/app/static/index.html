@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Family OS</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero card">
+        <div>
+          <p class="eyebrow">VC-inspired consumer product</p>
+          <h1>Family OS</h1>
+          <p class="subcopy">
+            A shared family context layer that turns lightweight updates into memory capture,
+            household awareness, and low-effort ideas for time together.
+          </p>
+        </div>
+        <div class="digest-panel">
+          <p class="section-label">Weekly digest</p>
+          <p id="digest"></p>
+        </div>
+      </section>
+
+      <section class="grid two-up">
+        <div class="card">
+          <div class="section-header">
+            <h2>Household</h2>
+            <span id="people-count"></span>
+          </div>
+          <div id="people-list" class="people-list"></div>
+        </div>
+        <div class="card">
+          <div class="section-header">
+            <h2>Add update</h2>
+            <span>Simulate daily family context</span>
+          </div>
+          <form id="update-form" class="stack">
+            <select id="person-id"></select>
+            <input id="category" placeholder="Category (school, travel, soccer)" required />
+            <input id="mood" placeholder="Mood (proud, tired, hopeful)" required />
+            <textarea id="text" placeholder="What happened?" required></textarea>
+            <button type="submit">Save update</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="grid two-up">
+        <div class="card">
+          <div class="section-header"><h2>Recent updates</h2><span>Shared context</span></div>
+          <div id="updates" class="stack compact"></div>
+        </div>
+        <div class="card">
+          <div class="section-header"><h2>Connection opportunities</h2><span>Actionable prompts</span></div>
+          <div id="suggestions" class="stack compact"></div>
+        </div>
+      </section>
+
+      <section class="grid two-up">
+        <div class="card">
+          <div class="section-header"><h2>Memory bank</h2><span>Moments worth keeping</span></div>
+          <div id="memories" class="stack compact"></div>
+        </div>
+        <div class="card">
+          <div class="section-header"><h2>Relationship graph</h2><span>People and themes</span></div>
+          <div id="graph" class="stack compact"></div>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

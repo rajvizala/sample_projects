@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProcureFlow AI</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero card">
+        <div>
+          <p class="eyebrow">AI for direct procurement</p>
+          <h1>ProcureFlow AI</h1>
+          <p class="subcopy">
+            A sourcing command center for turning requisitions, supplier quotes, and noisy operational signals into defensible procurement decisions.
+          </p>
+        </div>
+        <div id="forecast-strip" class="stack"></div>
+      </section>
+
+      <section class="grid two-up">
+        <div class="card">
+          <div class="section-header"><h2>Add requisition</h2><span>Procurement intake</span></div>
+          <form id="requisition-form" class="stack">
+            <input id="title" placeholder="Title" required />
+            <input id="category" placeholder="Category" required />
+            <div class="split">
+              <input id="quantity" type="number" min="1" placeholder="Quantity" required />
+              <input id="needed-by" type="date" required />
+            </div>
+            <div class="split">
+              <input id="priority" placeholder="Priority" value="medium" required />
+              <input id="certifications" placeholder="Required certs, comma-separated" />
+            </div>
+            <button type="submit">Create requisition</button>
+          </form>
+        </div>
+        <div class="card">
+          <div class="section-header"><h2>Price anomalies</h2><span>Negotiation watchlist</span></div>
+          <div id="anomalies" class="stack compact"></div>
+        </div>
+      </section>
+
+      <section class="grid two-up">
+        <div class="card">
+          <div class="section-header"><h2>Open requisitions</h2><span>Recommendation engine</span></div>
+          <div id="requisitions" class="stack compact"></div>
+        </div>
+        <div class="card">
+          <div class="section-header"><h2>Supplier network</h2><span>Operational context</span></div>
+          <div id="suppliers" class="stack compact"></div>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
