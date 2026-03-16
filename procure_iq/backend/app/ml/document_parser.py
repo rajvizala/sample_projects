@@ -140,9 +140,20 @@ def _extract_amounts(text: str) -> dict:
     amounts = {}
 
     total_match = re.search(
-        r'(?:total|amount\s*due|balance\s*due|grand\s*total)[:\s]*\$?\s*([\d,]+\.?\d*)',
+        r'(?:(?:grand\s+)?total|amount\s*due|balance\s*due)(?<!\bsub)[:\s]*\$?\s*([\d,]+\.?\d*)',
         text, re.IGNORECASE,
     )
+    subtotal_match_temp = re.search(
+        r'(?:subtotal|sub[\s-]*total)[:\s]*\$?\s*([\d,]+\.?\d*)', text, re.IGNORECASE,
+    )
+    if total_match and subtotal_match_temp and total_match.group(1) == subtotal_match_temp.group(1):
+        lines = text.split("\n")
+        for line in reversed(lines):
+            m = re.search(r'(?:^|\b)total[:\s]*\$?\s*([\d,]+\.?\d*)', line, re.IGNORECASE)
+            sub_check = re.search(r'sub', line, re.IGNORECASE)
+            if m and not sub_check:
+                total_match = m
+                break
     if total_match:
         amounts["total"] = float(total_match.group(1).replace(",", ""))
 
